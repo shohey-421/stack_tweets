@@ -1,0 +1,26 @@
+
+<div class="header">
+
+<div class="header-how">
+  <div class="howto-btn header-btn">
+    このアプリの使い方
+  </div>
+</div>
+
+<div class="header-title">
+  <h1>積み上げをツイートするためのアプリ<i class="fab fa-twitter"></i></h1>
+</div>
+
+<div class="header-menu">
+  <ul>
+    <%if user_signed_in? %>
+      <li class="header-menu-list"><%= image_tag current_user.image%></li>
+      <li class="header-menu-list"><%= link_to current_user.name, "https://twitter.com/#{current_user.nickname}",target: :_blank %></li>
+      <li class="header-menu-list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+    <%else%>
+      <li class="login_btn header-btn"><%= link_to "Twitterにログイン", user_twitter_omniauth_authorize_path, method: :post %></li>
+    <%end%>
+  </ul>
+</div>
+
+</div>
