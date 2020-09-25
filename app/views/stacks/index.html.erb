@@ -32,10 +32,10 @@
             <% @stacks.each_with_index do |stack,i| %>
               <tr>
                 <td id="stack-task-<%= i %>"><%= stack.task %></td>
-                <td align="center" id="stack-count-<%= i %>"><%= stack.count %></td>
+                <td align="center" id="stack-count-<%= i %>"><%= stack.count %><span id="stack-task-<%= i %>"><%= stack.unit %></span></td>
                 <td align="center">
                   <%= form_with model:stack, class:"count-form", remote: true do |f| %>
-                    <%= f.number_field :count, value:"", class:"today-stack-field", id:"today-stack-field-#{i}",placeholder:"num" %>
+                    <%= f.number_field :count, value:"", class:"today-stack-field", id:"today-stack-field-#{i}",placeholder:"0" %>
                     <%= f.submit "追加" ,class:"submit-btn", id:"count-submit-#{i}" %>
                     <span class="hidden stack-index"><%= i %></span>
                   <% end %>
@@ -49,7 +49,8 @@
       <div class="task-form-area">
         <h3>積み上げタスクの登録</h3>
         <%= form_with model:@stack do |f| %>
-          <%= f.text_field :task, placeholder:"タスク名（必須 20文字まで)", maxlength:"20", class:"task_field" %>
+          <%= f.text_field :task, placeholder:"タスク名（20文字まで)", maxlength:"20", class:"task_field" %>
+          <%= f.text_field :unit, placeholder:"単位", maxlength:"4", class:"unit_field" %>
           <%= f.submit "登録する" ,class:"submit-btn" %>
         <% end %>
       </div>

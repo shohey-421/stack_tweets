@@ -1,7 +1,7 @@
 $(function() {
 
   function createHTML(stack,Count) {
-    let stackTweet = `${stack.task} ${Count}<br>`
+    let stackTweet = `${stack.task} ${Count}${stack.unit}<br>`
     return stackTweet;
   }
 

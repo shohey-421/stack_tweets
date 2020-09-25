@@ -69,7 +69,7 @@ th {
 }
 
 thead th.count {
-  width: 50px;
+  width: 85px;
 }
 
 thead th.today-stack{
@@ -111,14 +111,22 @@ tbody tr:hover th {
 }
 
 .task-form-area{
-  width: 90%;
+  width: 100%;
   margin: 30px 0;
 }
 
 .task-form-area .task_field{
-  width: 70%;
+  width: 60%;
   height: 2em;
   border: 1px solid #999;
   border-radius: 5px;
   padding-left: 1em;
+}
+
+.task-form-area .unit_field{
+  width: 15%;
+  height: 2em;
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding-left: 0.5em;
 }

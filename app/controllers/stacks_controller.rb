@@ -23,14 +23,14 @@ class StacksController < ApplicationController
     if @stack.valid?
       respond_to do |format|
         # format.html { redirect_to root_path }
-        format.json { render json: { task: @stack.task, count: @stack.count, user_id: @stack.user_id, id: @stack.id } }
+        format.json { render json: { task: @stack.task, count: @stack.count, unit: @stack.unit, user_id: @stack.user_id, id: @stack.id } }
       end
     end
   end
 
   private
   def task_params
-    params.require(:stack).permit(:task).merge(user_id: current_user.id)
+    params.require(:stack).permit(:task,:unit).merge(user_id: current_user.id)
   end
 
   def count_up_params
