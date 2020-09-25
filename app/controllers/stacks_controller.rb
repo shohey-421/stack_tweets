@@ -42,6 +42,6 @@ class StacksController < ApplicationController
   end
 
   def today_params
-    params.require(:stack).permit(:count).merge(user_id: current_user.id)
+    params.require(:stack).permit(:count)
   end
 end

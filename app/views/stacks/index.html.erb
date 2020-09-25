@@ -35,7 +35,7 @@
                 <td align="center" id="stack-count-<%= i %>"><%= stack.count %></td>
                 <td align="center">
                   <%= form_with model:stack, class:"count-form", remote: true do |f| %>
-                    <%= f.text_area :count, value:"", class:"today-stack-field", id:"today-stack-field-#{i}",placeholder:"num" %>
+                    <%= f.number_field :count, value:"", class:"today-stack-field", id:"today-stack-field-#{i}",placeholder:"num" %>
                     <%= f.submit "追加" ,class:"submit-btn", id:"count-submit-#{i}" %>
                     <span class="hidden stack-index"><%= i %></span>
                   <% end %>
@@ -47,8 +47,9 @@
       </table>
     <%if user_signed_in? %>
       <div class="task-form-area">
+        <h3>積み上げタスクの登録</h3>
         <%= form_with model:@stack do |f| %>
-          <%= f.text_area :task, placeholder:"タスク名（必須 20文字まで)", maxlength:"20" %>
+          <%= f.text_field :task, placeholder:"タスク名（必須 20文字まで)", maxlength:"20", class:"task_field" %>
           <%= f.submit "登録する" ,class:"submit-btn" %>
         <% end %>
       </div>
@@ -60,6 +61,7 @@
 
   <div class="tweet-area">
     <div class="tweet-sample">
+    #今日の積み上げ<br>
     </div>
   </div>
   
