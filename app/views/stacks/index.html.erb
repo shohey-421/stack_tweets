@@ -35,8 +35,8 @@
                 <td align="center"><%= stack.count %></td>
                 <td align="center">
                   <%= form_with model:stack do |f| %>
-                  <%= f.text_area :count, value:"", class:"today-stack-field", id:"today-count-#{stack.id}" %>
-                  <%= f.submit "追加" ,class:"submit-btn" %>
+                  <%= f.text_area :count, value:"", class:"today-stack-field" %>
+                  <%= f.submit "追加" ,class:"submit-btn", id:"count-submit" %>
                   <% end %>
                 </td>
               </tr>
