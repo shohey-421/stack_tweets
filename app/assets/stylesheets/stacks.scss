@@ -59,7 +59,7 @@ thead th.count {
 }
 
 thead th.today-stack{
-  width: 130px;
+  width: 150px;
 }
 
  tbody td.count {
@@ -79,7 +79,7 @@ tbody tr:hover th {
 }
 
 .today-stack-field {
-  width: 60px;
+  width: 50px;
   padding-top: 15px;
 }
 
@@ -88,18 +88,22 @@ tbody tr:hover th {
   border-radius: 20px;
   line-height: 24px;
   padding: 0 8px;
-  background: #0099e4;
+  background: #00acee;
   color: #fff;
   cursor: pointer;
 }
 
+.hidden{
+  display: none;
+}
+
 .task-form-area{
-  width: 70%;
-  margin: 30px auto 0;
+  width: 90%;
+  margin: 30px 0;
 }
 
 .task-form-area textarea{
-  width: 80%;
+  width: 70%;
   height: 2em;
   border: 1px solid #999;
   border-radius: 5px;

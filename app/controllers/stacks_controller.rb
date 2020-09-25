@@ -21,7 +21,10 @@ class StacksController < ApplicationController
     @stack = Stack.find(params[:id])
     @stack.update(count_up_params)
     if @stack.valid?
-      render json:{ count: count }
+      respond_to do |format|
+        # format.html { redirect_to root_path }
+        format.json { render json: { task: @stack.task, count: @stack.count, user_id: @stack.user_id, id: @stack.id } }
+      end
     end
   end
 
