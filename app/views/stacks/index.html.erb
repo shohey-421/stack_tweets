@@ -2,6 +2,60 @@
 
 <div class="main">
 
+<div class="stack-wrapper">
+
+  <div class="table-area">
+    <h2>積み上げ</h2>
+    <div class="stack-table">
+      <table>
+        <thead>
+          <tr>
+            <th class="task">タスク</th>
+            <th class="count">累計</th>
+            <th class="today-stack">今日の積み上げ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if @stacks == nil %>
+              <tr>
+                <td>ログイン後ここにタスクが表示されます。</td>
+              </tr>
+          <% elsif @stacks == [] %>
+              <tr>
+                <td>新しいタスクを追加しよう</td>
+              </tr>
+          <% else %>
+          <%= form_with model:@stack do |f| %>
+            <% @stacks.each do |stack| %>
+              <tr>
+                <td ><%= stack.task %></td>
+                <td align="center"><%= stack.count %></td>
+                <td align="center"><%= f.text_area :count, value:"", class:"today-stack-field" %></td>
+              </tr>
+            <% end %>
+          <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="craate-item">
+      <h2>新しいタスクの追加</h2>
+      <%if user_signed_in? %>
+        <div class="task-form-area">
+          <%= form_with model:@stack do |f| %>
+            <%= f.text_area :task, placeholder:"タスク名（必須 20文字まで)", maxlength:"20" %>
+            <%= f.submit "登録する" ,class:"submit-btn" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="form-area">
+    
+  </div>
+  
+</div>
 
 </div>
 
