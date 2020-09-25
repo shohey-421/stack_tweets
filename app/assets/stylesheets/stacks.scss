@@ -59,7 +59,7 @@ thead th.count {
 }
 
 thead th.today-stack{
-  width: 60px;
+  width: 130px;
 }
 
  tbody td.count {
@@ -76,6 +76,11 @@ tbody tr th {
 tbody tr:hover td,
 tbody tr:hover th {
   background: #f4fbff;
+}
+
+.today-stack-field {
+  width: 60px;
+  padding-top: 15px;
 }
 
 .submit-btn {

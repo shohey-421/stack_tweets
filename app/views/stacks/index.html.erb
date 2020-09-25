@@ -19,36 +19,42 @@
           <% if @stacks == nil %>
               <tr>
                 <td>ログイン後ここにタスクが表示されます。</td>
+                <td></td>
+                <td></td>
               </tr>
           <% elsif @stacks == [] %>
               <tr>
                 <td>新しいタスクを追加しよう</td>
+                <td></td>
+                <td></td>
               </tr>
           <% else %>
-          <%= form_with model:@stack do |f| %>
             <% @stacks.each do |stack| %>
               <tr>
-                <td ><%= stack.task %></td>
+                <td id="stack-<%=stack.id%>"><%= stack.task %></td>
                 <td align="center"><%= stack.count %></td>
-                <td align="center"><%= f.text_area :count, value:"", class:"today-stack-field" %></td>
+                <td align="center">
+                  <%= form_with model:stack do |f| %>
+                  <%= f.text_area :count, value:"", class:"today-stack-field", id:"today-count-#{stack.id}" %>
+                  <%= f.submit "追加" ,class:"submit-btn" %>
+                  <% end %>
+                </td>
               </tr>
             <% end %>
-          <% end %>
           <% end %>
         </tbody>
       </table>
     </div>
-    <div class="craate-item">
-      <h2>新しいタスクの追加</h2>
-      <%if user_signed_in? %>
-        <div class="task-form-area">
-          <%= form_with model:@stack do |f| %>
-            <%= f.text_area :task, placeholder:"タスク名（必須 20文字まで)", maxlength:"20" %>
-            <%= f.submit "登録する" ,class:"submit-btn" %>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+
+    <%if user_signed_in? %>
+      <div class="task-form-area">
+        <%= form_with model:@stack do |f| %>
+          <%= f.text_area :task, placeholder:"タスク名（必須 20文字まで)", maxlength:"20" %>
+          <%= f.submit "登録する" ,class:"submit-btn" %>
+        <% end %>
+      </div>
+    <% end %>
+
   </div>
 
   <div class="form-area">
