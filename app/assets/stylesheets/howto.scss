@@ -1,9 +1,13 @@
 .howto-wrapper{
   width: 640px;
-  margin: 0 auto;
+  margin: 30px auto;
   padding: 10px;
   box-shadow: 0 0 8px gray;
   border-radius: 10px;
+}
+
+.howto-wrapper p{
+  text-align: center;
 }
 
 .howto{
