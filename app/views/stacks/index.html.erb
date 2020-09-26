@@ -30,7 +30,7 @@
             <% else %>
               <% @stacks.each_with_index do |stack,i| %>
                 <tr>
-                  <td id="stack-task-<%= i %>" class="js-modal-open" data-target="task-modal-<%= i %>"><%= stack.task %></td>
+                  <td id="stack-task-<%= i %>" class="js-modal-open stack-task-name" data-target="task-modal-<%= i %>"><%= stack.task %></td>
                   <td align="center" id="stack-count-<%= i %>"><%= stack.count %><span id="stack-task-<%= i %>"><%= stack.unit %></ span></td>
                   <td align="center">
                     <%= form_with model:stack, class:"count-form", remote: true do |f| %>
@@ -66,7 +66,9 @@
       <p>↓ツイートはこちらから↓</p>
       <div class="tweet-sample">
       </div>
-      <button type="button" id="tweet-btn" class="submit-btn">Twitterでツイートする</button>
+      <div class="tweet-btn-area">
+        <button type="button" id="tweet-btn" class="tweet-btn">Twitterでツイートする</button>
+      </div>
     </div>
     <% end %>
 

@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
 
   function createHTML(stack,Count) {
     let stackTweet = `・${stack.task} ${Count}${stack.unit}<br>`
@@ -34,6 +34,7 @@ $(function() {
           $(this).removeAttr("data-disable-with"); 
         });
       });
+      return false;
     });
   });
 });

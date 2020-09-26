@@ -11,7 +11,7 @@ class StacksController < ApplicationController
   def create
     stack =  Stack.new(task_params)
     if stack.save
-      redirect_to root_path
+      redirect_to success_stacks_path
     else
       render :index
     end
@@ -31,13 +31,22 @@ class StacksController < ApplicationController
     stack = Stack.find(params[:id])
     
     if stack.update(task_params)
-      redirect_back(fallback_location: root_path)
+      redirect_to success_stacks_path
     end
+  end
+
+  def destroy
+    stack = Stack.find(params[:id])
+    stack.destroy
+    redirect_to success_stacks_path
+  end  
+
+  def success
   end
 
   private
   def task_params
-    params.require(:stack).permit(:task,:unit).merge(user_id: current_user.id)
+    params.require(:stack).permit(:task,:unit,:count).merge(user_id: current_user.id)
   end
 
   def count_up_params

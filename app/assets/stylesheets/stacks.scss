@@ -73,11 +73,11 @@ th {
 }
 
 thead th.count {
-  width: 100px;
+  width: 140px;
 }
 
 thead th.today-stack{
-  width: 140px;
+  width: 160px;
 }
 
  tbody td.count {
@@ -96,8 +96,12 @@ tbody tr:hover th {
   background: #f4fbff;
 }
 
+.stack-task-name{
+  cursor: pointer;
+}
+
 .today-stack-field {
-  width: 50px;
+  width: 70px;
   border-bottom: 1px dotted #999;
 }
 
@@ -112,8 +116,8 @@ tbody tr:hover th {
 }
 
 .task-form-area{
-  width: 100%;
-  margin: 30px 0;
+  width: 90%;
+  margin: 30px auto;
 }
 
 .task-form-area .task_field{
@@ -121,7 +125,7 @@ tbody tr:hover th {
   height: 2em;
   border: 1px solid #999;
   border-radius: 5px;
-  padding-left: 1em;
+  padding-left: 0.5em;
 }
 
 .task-form-area .unit_field{
@@ -166,4 +170,18 @@ tbody tr:hover th {
 .tweet-sample:before {
   bottom:-12px;
   right:-12px;
+}
+
+.tweet-btn-area{
+  text-align: center;
+}
+
+.tweet-btn{
+  border: none;
+  border-radius: 20px;
+  line-height: 24px;
+  padding: 0 8px;
+  background: #00acee;
+  color: #fff;
+  cursor: pointer;
 }
