@@ -11,7 +11,7 @@ class StacksController < ApplicationController
   def create
     stack =  Stack.new(task_params)
     if stack.save
-      redirect_to success_stacks_path
+      redirect_to root_path
     else
       render :index
     end
@@ -29,19 +29,19 @@ class StacksController < ApplicationController
 
   def edit
     stack = Stack.find(params[:id])
-    
     if stack.update(task_params)
-      redirect_to success_stacks_path
+      redirect_to root_path
     end
   end
 
   def destroy
     stack = Stack.find(params[:id])
-    stack.destroy
-    redirect_to success_stacks_path
+    if stack.destroy
+      redirect_to root_path
+    end
   end  
 
-  def success
+  def howto
   end
 
   private

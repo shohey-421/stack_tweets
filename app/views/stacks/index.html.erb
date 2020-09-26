@@ -1,10 +1,23 @@
 <%= render 'shared/header' %>
 
 <div class="main">
+  <% unless user_signed_in? %>
+    <div class="intro-wrapper">
+      <div class="intro">
+        「#今日の積み上げ」で呟くタスクを集計できると楽しいかなと思って作りました。<br>
+        <div class="intro-btn-area">
+          <%= button_to user_twitter_omniauth_authorize_path, {method: :post, class:"intro-btn"} do %>
+            <p class="intro-btn-top">今日の積み上げったーを使ってみる</p>
+            <p class="intro-btn-botton">ご利用になるにはTwitterアカウントの連携が必要です</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 
   <div class="stack-wrapper">
     <div class="table-area">
-      <h2>積み上げ</h2>
+      <h2>積み上げの記録</h2>
       <div class="stack-table">
         <table>
           <thead>
@@ -38,14 +51,14 @@
                       <%= f.submit "追加" ,class:"submit-btn", id:"count-submit-#{i}" %>
                       <span class="hidden stack-index"><%= i %></span>
                     <% end %>
+                    <div id="task-modal-<%= i %>" class="modal js-modal">
+                      <div class="modal_bg js-modal-close"></div>
+                      <div class="modal_content">
+                        <%= render partial:"stacks/edit",locals: { stack: stack} %>
+                      </div>
+                    </div>
                   </td>
                 </tr>
-                <div id="task-modal-<%= i %>" class="modal js-modal">
-                  <div class="modal_bg js-modal-close"></div>
-                  <div class="modal_content">
-                    <%= render partial:"stacks/edit",locals: { stack: stack} %>
-                  </div>
-                </div>
               <% end %>
             <% end %>
           </tbody>
@@ -67,7 +80,7 @@
       <div class="tweet-sample">
       </div>
       <div class="tweet-btn-area">
-        <button type="button" id="tweet-btn" class="tweet-btn">Twitterでツイートする</button>
+        <button type="button" id="tweet-btn" class="tweet-btn">Twitterでツイートする<i class="fab fa-twitter"></i></button>
       </div>
     </div>
     <% end %>

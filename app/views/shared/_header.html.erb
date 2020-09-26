@@ -3,12 +3,15 @@
 
 <div class="header-how">
   <div class="howto-btn header-btn">
-    このアプリの使い方
+    <%= link_to 'このアプリの使い方' ,howto_stacks_path %>
   </div>
 </div>
 
 <div class="header-title">
-  <h1>積み上げをツイートするためのアプリ<i class="fab fa-twitter"></i></h1>
+  <h1><%= link_to root_path do %>
+    今日の積み上げったー<i class="fab fa-twitter"></i>
+    <% end %>
+  </h1>
 </div>
 
 <div class="header-menu">
@@ -18,7 +21,7 @@
       <li class="header-menu-list"><%= link_to current_user.name, "https://twitter.com/#{current_user.nickname}",target: :_blank %></li>
       <li class="header-menu-list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
     <%else%>
-      <li class="login_btn header-btn"><%= link_to "Twitterにログイン", user_twitter_omniauth_authorize_path, method: :post %></li>
+      <li class="login_btn header-btn"><%= link_to "Twitterでログイン", user_twitter_omniauth_authorize_path, method: :post %></li>
     <%end%>
   </ul>
 </div>

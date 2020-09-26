@@ -42,6 +42,79 @@ h3:before {
   margin-right: 8px;
 }
 
+h4 {
+  color: #6594e0;
+  border-bottom: dashed 2px #6594e0;
+  margin: 30px;
+  font-size: 20px;
+}
+
+.intro {
+  position: relative;
+  margin: 2em auto;
+  padding: 15px 35px 15px 25px;
+  width: 500px; /* ボックス幅 */
+  background-color: #fff; /* ボックス背景色 */
+  color: #555555; /* 文章色 */
+  border: 1px solid #ccc; /* 枠線 */
+  box-shadow: 1px 1px 1px #acacac; /* 影の色 */
+ }
+
+ .intro::before {
+  position: absolute;
+  content: '';
+  top: -15px;
+  right: 10px;
+  height: 55px;
+  width: 15px;
+  border: 3px solid #555555; /*クリップ色 */
+  background-color: none;
+  border-radius: 12px;
+  box-shadow: 1px 1px 2px #999;
+  transform: rotate(10deg);
+  z-index: 1;
+ }
+
+ .intro::after {
+  position: absolute;
+  content: '';
+  top: 0px;
+  width: 10px; 
+  right: 20px;
+  border: solid 5px #fff; /*背景色と同じ色にする*/
+  z-index: 2;
+ }
+
+ .intro-btn-area{
+   margin-top:20px ;
+   text-align: center;
+ }
+
+.intro-btn {
+  text-align: center;
+  display: inline-block;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  background: #00acee;
+  color: #FFF;
+  border-bottom: solid 4px #0072ac;
+  border-radius: 10px;
+}
+.intro-btn:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  border-bottom: none;
+}
+
+.intro-btn-top{
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.intro-btn-botton{
+  font-size: small;
+}
+
 textarea{
   resize: none;
 }

@@ -1,21 +1,21 @@
     <div class="edit-task-form-area">
       <h3>積み上げタスクの編集</h3>
-      <%= form_with model:stack, url:edit_stack_path(stack.id) do |f| %>
-        <div class="edit-form">
+      <%= form_with model:stack, url:edit_stack_path(stack.id) ,class:"edit-form" do |f| %>
+        <div class="edit-area">
           <span>タスク名：　　</span>
           <%= f.text_field :task, placeholder:"タスク名（15文字まで)", maxlength:"15", class:"edit-task_field", id:"stack-task-#{stack.id}" %>
         </div>
-        <div class="edit-form">
+        <div class="edit-area">
           <span>カウント数：　</span>
           <%= f.number_field :count, placeholder:"カウント数", class:"edit-number_field" , id:"stack-count-#{stack.id}"%>
         </div>
-        <div class="edit-form">
+        <div class="edit-area">
           <span>単位：　　　　</span>
           <%= f.text_field :unit, placeholder:"単位", maxlength:"4", class:"edit-unit_field",id:"stack-unit-#{stack.id}" %>
         </div>
         <div class="edit-btn-area">
-          <%= f.submit "編集する" ,class:"submit-btn" %>
-          <span class="delete-btn">
+          <%= f.submit "編集する" ,class:"submit-btn edit-submit-btn",id:"sumbit-btn-#{stack.id}" %>
+          <span class="delete-btn" id="delete-btn-<%= stack.id %>">
             <%= link_to "タスクを削除", stack_path(stack.id), method: :delete %>
           </span>
         </div>
