@@ -1,0 +1,38 @@
+.modal{
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+}
+.modal_bg{
+  background: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+}
+
+.modal_content{
+  background: #fff;
+  padding: 40px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 60%;
+}
+
+.modal_content i{
+  padding-right: 1em;
+}
+
+.js-modal-close{
+  text-align: center;
+}
+
+.close-btn{
+  margin-top: 30px;
+  cursor: pointer;
+}

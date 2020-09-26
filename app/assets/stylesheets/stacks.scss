@@ -1,3 +1,7 @@
+.hidden{
+  display: none;
+}
+
 h1{
   font-size: 24px;
 }
@@ -69,11 +73,11 @@ th {
 }
 
 thead th.count {
-  width: 85px;
+  width: 100px;
 }
 
 thead th.today-stack{
-  width: 150px;
+  width: 140px;
 }
 
  tbody td.count {
@@ -94,6 +98,7 @@ tbody tr:hover th {
 
 .today-stack-field {
   width: 50px;
+  border-bottom: 1px dotted #999;
 }
 
 .submit-btn {
@@ -104,10 +109,6 @@ tbody tr:hover th {
   background: #00acee;
   color: #fff;
   cursor: pointer;
-}
-
-.hidden{
-  display: none;
 }
 
 .task-form-area{
@@ -129,4 +130,40 @@ tbody tr:hover th {
   border: 1px solid #999;
   border-radius: 5px;
   padding-left: 0.5em;
+}
+
+.tweet-area{
+  width: 60%;
+  margin: 0 auto;
+}
+
+.tweet-area p {
+  text-align: center;
+}
+
+.tweet-sample{
+  margin:2em 0;
+  position: relative;
+  padding: 20px;
+  border: solid 2px #00acee;
+  border-radius: 3px 0 3px 0;
+}
+
+.tweet-sample:before,.tweet-sample:after{
+  content: '';
+  position: absolute;
+  width:10px;
+  height: 10px;
+  border: solid 2px #00acee;
+  border-radius: 50%;
+}
+
+.tweet-sample:after {
+  top:-12px;
+  left:-12px;
+}
+
+.tweet-sample:before {
+  bottom:-12px;
+  right:-12px;
 }

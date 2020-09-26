@@ -2,71 +2,75 @@
 
 <div class="main">
 
-<div class="stack-wrapper">
-
-  <div class="table-area">
-    <h2>積み上げ</h2>
-    <div class="stack-table">
-      <table>
-        <thead>
-          <tr>
-            <th class="task">タスク</th>
-            <th class="count">累計</th>
-            <th class="today-stack">今日の積み上げ</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% if @stacks == nil %>
-              <tr>
-                <td>ログイン後ここにタスクが表示されます。</td>
-                <td></td>
-                <td></td>
-              </tr>
-          <% elsif @stacks == [] %>
-              <tr>
-                <td>新しいタスクを追加しよう</td>
-                <td></td>
-                <td></td>
-              </tr>
-          <% else %>
-            <% @stacks.each_with_index do |stack,i| %>
-              <tr>
-                <td id="stack-task-<%= i %>"><%= stack.task %></td>
-                <td align="center" id="stack-count-<%= i %>"><%= stack.count %><span id="stack-task-<%= i %>"><%= stack.unit %></span></td>
-                <td align="center">
-                  <%= form_with model:stack, class:"count-form", remote: true do |f| %>
-                    <%= f.number_field :count, value:"", class:"today-stack-field", id:"today-stack-field-#{i}",placeholder:"0" %>
-                    <%= f.submit "追加" ,class:"submit-btn", id:"count-submit-#{i}" %>
-                    <span class="hidden stack-index"><%= i %></span>
-                  <% end %>
-                </td>
-              </tr>
+  <div class="stack-wrapper">
+    <div class="table-area">
+      <h2>積み上げ</h2>
+      <div class="stack-table">
+        <table>
+          <thead>
+            <tr>
+              <th class="task">タスク</th>
+              <th class="count">累計</th>
+              <th class="today-stack">今日の積み上げ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if @stacks == nil %>
+                <tr>
+                  <td>ログイン後ここにタスクが表示されます。</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+            <% elsif @stacks == [] %>
+                <tr>
+                  <td>新しいタスクを追加しよう</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+            <% else %>
+              <% @stacks.each_with_index do |stack,i| %>
+                <tr>
+                  <td id="stack-task-<%= i %>" class="js-modal-open" data-target="task-modal-<%= i %>"><%= stack.task %></td>
+                  <td align="center" id="stack-count-<%= i %>"><%= stack.count %><span id="stack-task-<%= i %>"><%= stack.unit %></ span></td>
+                  <td align="center">
+                    <%= form_with model:stack, class:"count-form", remote: true do |f| %>
+                      <%= f.number_field :count, value:"", class:"today-stack-field", id:"today-stack-field-#{i}",placeholder:"0" %>
+                      <%= f.submit "追加" ,class:"submit-btn", id:"count-submit-#{i}" %>
+                      <span class="hidden stack-index"><%= i %></span>
+                    <% end %>
+                  </td>
+                </tr>
+                <div id="task-modal-<%= i %>" class="modal js-modal">
+                  <div class="modal_bg js-modal-close"></div>
+                  <div class="modal_content">
+                    <%= render partial:"stacks/edit",locals: { stack: stack} %>
+                  </div>
+                </div>
+              <% end %>
             <% end %>
-          <% end %>
-        </tbody>
-      </table>
-    <%if user_signed_in? %>
-      <div class="task-form-area">
-        <h3>積み上げタスクの登録</h3>
-        <%= form_with model:@stack do |f| %>
-          <%= f.text_field :task, placeholder:"タスク名（20文字まで)", maxlength:"20", class:"task_field" %>
-          <%= f.text_field :unit, placeholder:"単位", maxlength:"4", class:"unit_field" %>
-          <%= f.submit "登録する" ,class:"submit-btn" %>
-        <% end %>
+          </tbody>
+        </table>
       </div>
-    <% end %>
-  </div>
-
-
-  
-
-  <div class="tweet-area">
-    <div class="tweet-sample">
-    #今日の積み上げ<br>
     </div>
+
+    <% if user_signed_in? %>
+    <div class="task-form-area">
+      <h3>積み上げタスクの登録</h3>
+      <%= form_with model:@stack do |f| %>
+        <%= f.text_field :task, placeholder:"タスク名（15文字まで)", maxlength:"15", class:"task_field" %>
+        <%= f.text_field :unit, placeholder:"単位", maxlength:"4", class:"unit_field" %>
+        <%= f.submit "登録する" ,class:"submit-btn" %>
+      <% end %>
+    </div>
+    <div class="tweet-area">
+      <p>↓ツイートはこちらから↓</p>
+      <div class="tweet-sample">
+      </div>
+      <button type="button" id="tweet-btn" class="submit-btn">Twitterでツイートする</button>
+    </div>
+    <% end %>
+
   </div>
-  
-</div>
 
 </div>
 

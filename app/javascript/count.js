@@ -1,7 +1,7 @@
 $(function() {
 
   function createHTML(stack,Count) {
-    let stackTweet = `${stack.task} ${Count}${stack.unit}<br>`
+    let stackTweet = `・${stack.task} ${Count}${stack.unit}<br>`
     return stackTweet;
   }
 
@@ -22,7 +22,7 @@ $(function() {
       .done(function(data) {
         let stackTweet = createHTML(data,inputCount); 
         $(".tweet-sample").append(stackTweet); 
-        $(`#stack-count-${index}`).text(data.count)
+        $(`#stack-count-${index}`).text(data.count + data.unit)
         $(`#today-stack-field-${index}`).val("")  
       })
       .fail(function() {

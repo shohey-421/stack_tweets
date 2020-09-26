@@ -1,0 +1,9 @@
+    <div class="task-form-area">
+      <h3>積み上げタスクの編集</h3>
+      <%= form_with model:stack, url:edit_stack_path(stack.id) do |f| %>
+        <%= f.text_field :task, placeholder:"タスク名（15文字まで)", maxlength:"15", id:"stack-task-#{stack.id}", class:"task_field" %>
+        <%= f.text_field :count, placeholder:"カウント数", class:"unit_field" , id:"stack-count-#{stack.id}"%>
+        <%= f.text_field :unit, placeholder:"単位", maxlength:"4", class:"unit_field",id:"stack-unit-#{stack.id}" %>
+        <%= f.submit "編集する" ,class:"submit-btn" %>
+      <% end %>
+    </div>

@@ -9,6 +9,8 @@ require("@rails/activestorage").start()
 require("channels")
 require('jquery')
 require('../count.js')
+require('../tweet.js')
+require("../modal.js")
 import '@fortawesome/fontawesome-free/js/all';
 
 // Uncomment to copy all static images under ../images to the output folder and reference

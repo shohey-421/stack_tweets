@@ -22,9 +22,16 @@ class StacksController < ApplicationController
     @stack.update(count_up_params)
     if @stack.valid?
       respond_to do |format|
-        # format.html { redirect_to root_path }
         format.json { render json: { task: @stack.task, count: @stack.count, unit: @stack.unit, user_id: @stack.user_id, id: @stack.id } }
       end
+    end
+  end
+
+  def edit
+    stack = Stack.find(params[:id])
+    
+    if stack.update(task_params)
+      redirect_back(fallback_location: root_path)
     end
   end
 
