@@ -45,10 +45,14 @@
                 <tr>
                   <td id="stack-task-<%= i %>" class="js-modal-open stack-task-name" data-target="task-modal-<%= i %>"><%= stack.task %></td>
                   <td align="center" id="stack-count-<%= i %>"><%= stack.count %><span id="stack-task-<%= i %>"><%= stack.unit %></ span></td>
-                  <td align="center">
+                  <td align="center" class="today-count-sell">
                     <%= form_with model:stack, class:"count-form", remote: true do |f| %>
                       <%= f.number_field :count, value:"", class:"today-stack-field", id:"today-stack-field-#{i}",placeholder:"0" %>
                       <%= f.submit "追加" ,class:"submit-btn", id:"count-submit-#{i}" %>
+                      <div class="sum-check-box">
+                        <%= check_box_tag 'check', true, false, {id:"sum-check-#{i}"} %>
+                        <%= label_tag :check, "累計をツイート" %>
+                      </div>
                       <span class="hidden stack-index"><%= i %></span>
                     <% end %>
                     <div id="task-modal-<%= i %>" class="modal js-modal">

@@ -164,13 +164,17 @@ thead th.today-stack{
 tbody tr td,
 tbody tr th {
   border-bottom: 1px solid #ccc;
-  padding: 15px 5px;
+  padding: 10px 5px;
   vertical-align: middle;
 }
 
 tbody tr:hover td,
 tbody tr:hover th {
   background: #f4fbff;
+}
+
+.today-count-sell{
+  padding: 20px 5px 0;
 }
 
 .stack-task-name{
@@ -211,6 +215,13 @@ tbody tr:hover th {
   border: 1px solid #999;
   border-radius: 5px;
   padding-left: 0.5em;
+}
+
+.sum-check-box{
+  font-size: small;
+  padding: 5px 0;
+  display: flex;
+  justify-content: center;
 }
 
 .tweet-area{
