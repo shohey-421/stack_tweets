@@ -61,3 +61,5 @@ gem 'omniauth-twitter'
 gem "omniauth-rails_csrf_protection"
 
 gem 'jquery-turbolinks'
+
+gem 'rails-i18n'

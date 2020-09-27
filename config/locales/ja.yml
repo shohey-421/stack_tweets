@@ -1,0 +1,6 @@
+ja:
+ activerecord:
+   attributes:
+     stack:
+       task: タスク
+       unit: 単位
