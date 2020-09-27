@@ -196,6 +196,10 @@ tbody tr:hover th {
   cursor: pointer;
 }
 
+.create-stack-form{
+  display: flex;
+}
+
 .task-form-area{
   width: 90%;
   margin: 30px auto;
@@ -207,6 +211,7 @@ tbody tr:hover th {
   border: 1px solid #999;
   border-radius: 5px;
   padding-left: 0.5em;
+  margin-right: 5px;
 }
 
 .task-form-area .unit_field{
@@ -215,6 +220,7 @@ tbody tr:hover th {
   border: 1px solid #999;
   border-radius: 5px;
   padding-left: 0.5em;
+  margin-right: 5px;
 }
 
 .sum-check-box{
@@ -272,4 +278,20 @@ tbody tr:hover th {
   background: #00acee;
   color: #fff;
   cursor: pointer;
+}
+
+.login-missing-message{
+  text-align: center;
+}
+
+.error-alert {
+  display: flex;
+  justify-content: center;
+  margin-bottom:30px ;
+}
+
+.error-message {
+  font-size: 1.3vw;
+  list-style: circle;
+  color: rgb(182, 48, 0);
 }

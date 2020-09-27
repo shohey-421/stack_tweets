@@ -35,15 +35,9 @@
             </tr>
           </thead>
           <tbody>
-            <% if @stacks == nil %>
+            <% if @stacks == nil || @stacks == [] %>
                 <tr>
-                  <td>ログイン後ここにタスクが表示されます。</td>
-                  <td></td>
-                  <td></td>
-                </tr>
-            <% elsif @stacks == [] %>
-                <tr>
-                  <td>新しいタスクを追加しよう</td>
+                  <td>登録したタスクが表示されます。</td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -80,12 +74,15 @@
     <% if user_signed_in? %>
     <div class="task-form-area">
       <h3>積み上げタスクの登録</h3>
-      <%= form_with model:@stack do |f| %>
+      <%= form_with model:@stack ,class:"create-stack-form",local: true do |f| %>
         <%= f.text_field :task, placeholder:"タスク名（15文字まで)", maxlength:"15", class:"task_field" %>
         <%= f.text_field :unit, placeholder:"単位", maxlength:"5", class:"unit_field" %>
         <%= f.submit "登録する" ,class:"submit-btn" %>
       <% end %>
     </div>
+    
+    <%= render partial:'shared/error_messages', locals: { estack: @stack}%>
+
     <div class="tweet-area">
       <p>↓ツイートはこちらから↓</p>
       <div class="tweet-sample">

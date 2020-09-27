@@ -11,7 +11,7 @@
         </div>
         <div class="edit-area">
           <span>単位：　　　　</span>
-          <%= f.text_field :unit, placeholder:"単位", maxlength:"4", class:"edit-unit_field",id:"stack-unit-#{stack.id}" %>
+          <%= f.text_field :unit, placeholder:"単位", maxlength:"5", class:"edit-unit_field",id:"stack-unit-#{stack.id}" %>
         </div>
         <div class="edit-btn-area">
           <%= f.submit "編集する" ,class:"submit-btn edit-submit-btn",id:"sumbit-btn-#{stack.id}" %>

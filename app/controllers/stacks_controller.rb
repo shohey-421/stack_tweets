@@ -9,11 +9,12 @@ class StacksController < ApplicationController
   end
 
   def create
-    stack =  Stack.new(task_params)
-    if stack.save
+    @stack =  Stack.new(task_params)
+    if @stack.save
       redirect_to root_path
     else
-      render :index
+      @stacks = Stack.where(user_id: current_user.id)
+      render 'index'
     end
   end
 
@@ -40,15 +41,6 @@ class StacksController < ApplicationController
       redirect_to root_path
     end
   end  
-
-  def howto
-  end
-
-  def terms
-  end
-  
-  def policy
-  end
 
   private
   def task_params
