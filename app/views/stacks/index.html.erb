@@ -1,7 +1,14 @@
 <%= render 'shared/header' %>
 
 <div class="main">
-  <% unless user_signed_in? %>
+  <% if user_signed_in? %>
+    <div class="intro-wrapper">
+      <div class="intro">
+        <%= current_user.name %>さん、いつもご利用ありがとうございます♪<br>
+        今日も積み上げがんばりましょー！
+      </div>
+    </div>
+  <% else %>
     <div class="intro-wrapper">
       <div class="intro">
         「#今日の積み上げ」で呟くタスクを集計できると楽しいかなと思って作りました。<br>
@@ -75,7 +82,7 @@
       <h3>積み上げタスクの登録</h3>
       <%= form_with model:@stack do |f| %>
         <%= f.text_field :task, placeholder:"タスク名（15文字まで)", maxlength:"15", class:"task_field" %>
-        <%= f.text_field :unit, placeholder:"単位", maxlength:"4", class:"unit_field" %>
+        <%= f.text_field :unit, placeholder:"単位", maxlength:"5", class:"unit_field" %>
         <%= f.submit "登録する" ,class:"submit-btn" %>
       <% end %>
     </div>

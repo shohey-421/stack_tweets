@@ -44,6 +44,12 @@ class StacksController < ApplicationController
   def howto
   end
 
+  def terms
+  end
+  
+  def policy
+  end
+
   private
   def task_params
     params.require(:stack).permit(:task,:unit,:count).merge(user_id: current_user.id)

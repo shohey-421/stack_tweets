@@ -1,0 +1,30 @@
+.policy-wrapper{
+  width: 640px;
+  margin: 30px auto;
+  padding: 20px;
+  box-shadow: 0 0 8px gray;
+  border-radius: 10px;
+}
+
+.policy-wrapper p{
+  padding: 0.2em 0;
+}
+
+.policy-wrapper ol{
+  padding-left:2em ;
+}
+
+.policy-wrapper li{
+  list-style: outside decimal;
+  padding: 0.2em 0;
+}
+
+
+.finish{
+  margin: 20px 0 ;
+  text-align: end;
+}
+
+.return-top{
+  text-align: center;
+}

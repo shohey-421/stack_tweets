@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:twitter]
 
-  has_many :stacks
+  has_many :stacks, dependent: :destroy
 
   def self.find_for_oauth(auth)
    user = User.where(uid: auth.uid, provider: auth.provider).first
@@ -20,6 +20,18 @@ class User < ApplicationRecord
        nickname: auth.info.nickname,
        location: auth.info.location
      )
+   end
+
+   if user.nickname != auth.info.nickname
+     user.update(nickname: auth.info.nickname)
+   end
+
+   if user.image != auth.info.image
+     user.update(image: auth.info.image)
+   end
+
+   if user.name != auth.info.name
+     user.update(name: auth.info.name)
    end
 
    user

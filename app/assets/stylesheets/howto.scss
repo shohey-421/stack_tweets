@@ -28,3 +28,34 @@
   border:solid 1px #ccc;
   padding:4px;
 }
+
+.exit-link-text{
+  border-bottom:1.5px dotted #999 ;
+  cursor: pointer;
+}
+
+.red-text{
+  color: red;
+  font-weight: bold;
+}
+
+.exit-btn{
+  border: none;
+  border-radius: 20px;
+  line-height: 24px;
+  padding: 0 8px;
+  color: #fff;
+  cursor: pointer;
+  background: #999;
+  margin-left: 20px;
+}
+
+.cancel-btn{
+  border: none;
+  border-radius: 20px;
+  line-height: 24px;
+  padding: 0 8px;
+  background: #00acee;
+  color: #fff;
+  cursor: pointer;
+}

@@ -1,0 +1,10 @@
+<h3>退会</h3>
+<p>本当に退会しますか？</p>
+<p class="red-text">※この操作は取り消せません</p>
+
+<div class="edit-btn-area">
+  <button type="button" id="cancle-btn" class="js-modal-close cancel-btn">キャンセル</button>
+  <span class="exit-btn" id="exit-btn">
+    <%= link_to "退会する", user_registration_path, method: :delete %>
+  </span>
+</div>

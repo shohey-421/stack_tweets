@@ -34,9 +34,21 @@
       </div>
     </div>
     <div class="howto">
-      <h3>タスク名をクリックするとタスクの編集・削除ができます</h3>
+      <h3><i class="far fa-star"></i> タスク名をクリックするとタスクの編集・削除ができます</h3>
       <div class="img-box">
         <%= image_tag 'howto_6.jpeg' %>
+      </div>
+    </div>
+    <div class="howto">
+      <h3><i class="far fa-star"></i> 退会は<span class="js-modal-open exit-link-text" data-target="exit-modal">こちらから</span>　退会後にTwitterでの提携解除も忘れずに行いましょう</h3>
+      <div class="img-box">
+        <%= image_tag 'howto_7.jpeg' %>
+      </div>
+      <div id="exit-modal" class="modal js-modal">
+        <div class="modal_bg js-modal-close"></div>
+        <div class="modal_content">
+          <%= render partial:"stacks/exit" %>
+        </div>
       </div>
     </div>
     <p><%= link_to '-トップページに戻る-', root_path %></p>
