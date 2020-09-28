@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_09_25_223345) do
 
-  create_table "stacks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
+  create_table "stacks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "task", null: false
     t.integer "count", default: 0
     t.bigint "user_id"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_09_25_223345) do
     t.index ["user_id"], name: "index_stacks_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "uid"
     t.string "provider"
     t.string "name"

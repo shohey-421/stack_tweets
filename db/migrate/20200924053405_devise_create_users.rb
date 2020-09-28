@@ -2,7 +2,7 @@
 
 class DeviseCreateUsers < ActiveRecord::Migration[6.0]
   def change
-    create_table, options: 'DEFAULT CHARSET=utf8mb4' :users do |t|
+    create_table :users, options: 'ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'do |t|
       ## Database authenticatable
       t.string :uid ,              unique: true
       t.string :provider
