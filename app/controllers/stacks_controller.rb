@@ -29,9 +29,12 @@ class StacksController < ApplicationController
   end
 
   def edit
-    stack = Stack.find(params[:id])
-    if stack.update(task_params)
+    @stack = Stack.find(params[:id])
+    if @stack.update(task_params)
       redirect_to root_path
+    else
+      @stacks = Stack.where(user_id: current_user.id)
+      render 'index'
     end
   end
 

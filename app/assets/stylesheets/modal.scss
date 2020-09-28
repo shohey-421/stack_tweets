@@ -48,7 +48,7 @@
   margin-bottom: 10px;
 }
 
-.edit-task_field{
+.edit-task-field{
   width: 60%;
   height: 2em;
   border: 1px solid #999;
@@ -56,15 +56,15 @@
   padding-left: 0.5em;
 }
 
-.edit-unit_field{
-  width: 20%;
+.edit-unit-field{
+  width: 30%;
   height: 2em;
   border: 1px solid #999;
   border-radius: 5px;
   padding-left: 0.5em;
 }
 
-.edit-number_field{
+.edit-counter-field{
   width: 30%;
   height: 2em;
   border: 1px solid #999;
@@ -95,4 +95,9 @@
 
 .img-box img{
   width: 100%;
+}
+
+.error-area{
+  text-align: center;
+  color: rgb(182, 48, 0);
 }

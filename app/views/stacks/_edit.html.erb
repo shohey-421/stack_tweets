@@ -3,15 +3,20 @@
       <%= form_with model:stack, url:edit_stack_path(stack.id) ,class:"edit-form" do |f| %>
         <div class="edit-area">
           <span>タスク名：　　</span>
-          <%= f.text_field :task, placeholder:"タスク名（15文字まで)", maxlength:"15", class:"edit-task_field", id:"stack-task-#{stack.id}" %>
+          <%= f.text_field :task, placeholder:"タスク名（15文字まで)", maxlength:"15", class:"edit-task-field", id:"stack-task-#{stack.id}" %>
         </div>
         <div class="edit-area">
           <span>カウント数：　</span>
-          <%= f.number_field :count, placeholder:"カウント数", class:"edit-number_field" , id:"stack-count-#{stack.id}"%>
+          <%= f.number_field :count, placeholder:"カウント数", class:"edit-counter-field" , id:"stack-count-#{stack.id}"%>
         </div>
         <div class="edit-area">
           <span>単位：　　　　</span>
-          <%= f.text_field :unit, placeholder:"単位", maxlength:"5", class:"edit-unit_field",id:"stack-unit-#{stack.id}" %>
+          <%= f.text_field :unit, placeholder:"単位", maxlength:"5", class:"edit-unit-field",id:"stack-unit-#{stack.id}" %>
+        </div>
+        <div class="error-area">
+          <p class="edit-error-task hidden">タスク名は必ず入力してください</p>
+          <p class="edit-error-count hidden">カウントは必ず入力してください</p>
+          <p class="edit-error-unit hidden">単位は必ず入力してください</p>
         </div>
         <div class="edit-btn-area">
           <%= f.submit "編集する" ,class:"submit-btn edit-submit-btn",id:"sumbit-btn-#{stack.id}" %>

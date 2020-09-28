@@ -11,6 +11,7 @@ require('jquery')
 require('../count.js')
 require('../tweet.js')
 require("../modal.js")
+require("../edit_error.js")
 import '@fortawesome/fontawesome-free/js/all';
 
 // Uncomment to copy all static images under ../images to the output folder and reference

@@ -5,9 +5,4 @@ $(document).on('turbolinks:load', function(){
     open( `https://twitter.com/intent/tweet?text=${tweetText}&hashtags=今日の積み上げ,今日の積み上げったー`, "_blank") ;
     $('.tweet-sample').text("");
   });
-
-  $('.submit-btn').each(function(){
-    $(this).removeAttr("disabled"); 
-    $(this).removeAttr("data-disable-with"); 
-  });
 });
