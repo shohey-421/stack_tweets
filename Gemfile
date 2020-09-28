@@ -63,3 +63,7 @@ gem "omniauth-rails_csrf_protection"
 gem 'jquery-turbolinks'
 
 gem 'rails-i18n'
+
+group :production do
+  gem 'rails_12factor'
+end
