@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/home/howto', to: 'homes#howto' 
-  get '/home/terms', to: 'homes#terms' 
-  get '/home/policy', to: 'homes#policy' 
+  get '/howto', to: 'homes#howto' 
+  get 'terms', to: 'homes#terms' 
+  get 'policy', to: 'homes#policy' 
 end
