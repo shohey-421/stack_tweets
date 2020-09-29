@@ -48,3 +48,13 @@
   box-shadow: 0px 0px 0px 5px #00c44b;
   cursor: pointer;
 }
+
+.header-title{
+  display: flex;
+  align-items: center;
+}
+
+.header-title img{
+  height: 60px;
+  object-fit: contain;
+}

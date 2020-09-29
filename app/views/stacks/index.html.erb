@@ -14,7 +14,7 @@
         「#今日の積み上げ」で呟くタスクを集計できると楽しいかなと思って作りました。<br>
         <div class="intro-btn-area">
           <%= button_to user_twitter_omniauth_authorize_path, {method: :post, class:"intro-btn"} do %>
-            <p class="intro-btn-top">今日の積み上げったーを使ってみる</p>
+            <p class="intro-btn-top">今日の積み上げったーを使ってみる<i class="fab fa-twitter"></i></p>
             <p class="intro-btn-botton">ご利用になるにはTwitterアカウントの連携が必要です</p>
           <% end %>
         </div>
@@ -45,7 +45,7 @@
               <% @stacks.each_with_index do |stack,i| %>
                 <tr>
                   <td id="stack-task-<%= i %>" class="js-modal-open stack-task-name" data-target="task-modal-<%= i %>"><%= stack.task %></td>
-                  <td align="center" id="stack-count-<%= i %>"><%= stack.count %><span id="stack-task-<%= i %>"><%= stack.unit %></ span></td>
+                  <td align="center" id="stack-count-<%= i %>"><%= stack.count %><span id="stack-task-<%= i %>"><%= stack.unit %></span></td>
                   <td align="center" class="today-count-sell">
                     <%= form_with model:stack, class:"count-form", remote: true do |f| %>
                       <%= f.number_field :count, value:"", class:"today-stack-field", id:"today-stack-field-#{i}",placeholder:"0" %>

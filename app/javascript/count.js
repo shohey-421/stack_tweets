@@ -28,7 +28,7 @@ $(document).on('turbolinks:load', function() {
       .done(function(data) {
         let stackTweet = createHTML(data,sumCheck,inputCount); 
         $(".tweet-sample").append(stackTweet); 
-        $(`#stack-count-${index}`).text(data.count + data.unit)
+        $(`#stack-count-${index}`).html(data.count + data.unit)
         $(`#today-stack-field-${index}`).val("")  
       })
       .fail(function() {
