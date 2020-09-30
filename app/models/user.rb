@@ -15,7 +15,7 @@ class User < ApplicationRecord
        provider: auth.provider,
        email:    User.dummy_email(auth),
        password: Devise.friendly_token[0, 20],
-       image: auth.info.image,
+       image: auth.info.image.insert(4,"s"),
        name: auth.info.name,
        nickname: auth.info.nickname,
        location: auth.info.location
@@ -41,5 +41,10 @@ class User < ApplicationRecord
 
   def self.dummy_email(auth)
    "#{auth.uid}-#{auth.provider}@example.com"
+  end
+
+  def make_https(auth)
+    http = auth.info.image
+    http.insert(4,"s")
   end
 end
