@@ -16,7 +16,8 @@
  **https://stack-tweets.heys-apps.work/**
 
 ## 利用方法
-
+![task](https://user-images.githubusercontent.com/69449342/94908500-b7ecd580-04dc-11eb-97e4-22cf9bfd9b02.gif)
+![count](https://user-images.githubusercontent.com/69449342/94908506-b9b69900-04dc-11eb-936f-4f571d326a41.gif)
 
 - アプリをTwitterと連携します（ログイン）
 - フォームからタスクとそのカウント単位を登録します
