@@ -22,9 +22,6 @@
 そうして、日々の積み上げの記録をすると同時に、その内容を簡単に投稿できるこのアプリの制作に至りました。
 
 ## 利用方法
-![task](https://user-images.githubusercontent.com/69449342/94908500-b7ecd580-04dc-11eb-97e4-22cf9bfd9b02.gif)
-![count](https://user-images.githubusercontent.com/69449342/94908506-b9b69900-04dc-11eb-936f-4f571d326a41.gif)
-
 - アプリをTwitterと連携します。（ログイン）
 - フォームからタスクとそのカウント単位を登録します。
 - 今日の積み上げ列のフォームにカウントを入力しして「追加ボタン」を押します。
@@ -32,6 +29,8 @@
 - 「累計をツイート」にチェックが入っていた場合は、累計の数字がツイート文に反映されます。
 - 「Twitterでツイートする」ボタンを押すと、Twitter公式の投稿画面に遷移します。
 - 表のタスク名をクリックすると、編集削除のウィンドウが表示されます。
+![task](https://user-images.githubusercontent.com/69449342/94908500-b7ecd580-04dc-11eb-97e4-22cf9bfd9b02.gif)
+![count](https://user-images.githubusercontent.com/69449342/94908506-b9b69900-04dc-11eb-936f-4f571d326a41.gif)
 
 ## ローカルでの動作方法
 `$ git clone https://github.com/shohey-421/stack-tweets.git`  
