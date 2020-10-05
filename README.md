@@ -40,6 +40,32 @@
 `% rails db:migrate`  
 `$ rails s`  
 
+##  DB設計
+### users テーブル
+| Column     | Type   | Options                  | 
+| -----------| ------ | ------------------------ | 
+| uid        | string | null: false, unique: true| 
+| provider   | string | null: false              | 
+| name       | string | null: false              | 
+| nickname   | string | null: false              | 
+| location   | string | null: false              | 
+| image      | string | null: false              | 
+| email      | string | null: false              | 
+
+### Association
+- has_many :stacks
+
+### stacks テーブル
+| Column     | Type       | Options                        | 
+| -----------| ---------- | ------------------------------ | 
+| task       | string     | null: false                    | 
+| count      | integer    | null: false                    | 
+| unit       | string     | null: false                    | 
+| user       | references | null: false, foreign_key: true |
+
+### Association
+- belong_to :user
+
 - - -
 
 ## 実装予定の機能
