@@ -1,33 +1,35 @@
 
 <div class="header">
+  <div class="header-box">
 
-<div class="header-how">
-  <%= link_to howto_path do %>
-    <div class="howto-btn header-btn">
-      このアプリの使い方
-    </div>
-  <% end %>
-</div>
-
-<%= link_to root_path do %>
-  <div class="header-title">
-    <%= image_tag  "/title-img.png" %>
-  </div>
-<% end %>
-  
-
-<div class="header-menu">
-  <ul>
-    <%if user_signed_in? %>
-      <li class="header-menu-list"><%= image_tag current_user.image%></li>
-      <li class="header-menu-list"><%= link_to current_user.name, "https://twitter.com/#{current_user.nickname}",target: :_blank %></li>
-      <li class="header-menu-list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-    <%else%>
-      <%= link_to user_twitter_omniauth_authorize_path, method: :post do %>
-        <li class="login_btn header-btn">Twitterでログイン</li>
+    <div class="header-how">
+      <%= link_to howto_path do %>
+        <div class="howto-btn header-btn">
+          このアプリの使い方
+        </div>
       <% end %>
-    <%end%>
-  </ul>
-</div>
+    </div>
 
+    <%= link_to root_path do %>
+      <div class="header-title">
+        <%= image_tag  "/title-img.png" %>
+      </div>
+    <% end %>
+
+
+    <div class="header-menu">
+      <ul>
+        <%if user_signed_in? %>
+          <li class="header-menu-list"><%= image_tag current_user.image%></li>
+          <li class="header-menu-list"><%= link_to current_user.name, "https://twitter.com/#{current_user.nickname}",   target: :_blank %></li>
+          <li class="header-menu-list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <%else%>
+          <%= link_to user_twitter_omniauth_authorize_path, method: :post do %>
+            <li class="login_btn header-btn">Twitterでログイン</li>
+          <% end %>
+        <%end%>
+      </ul>
+    </div>
+
+  </div>
 </div>
