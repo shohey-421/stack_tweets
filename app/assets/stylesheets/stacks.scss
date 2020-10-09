@@ -119,6 +119,28 @@ h4 {
   font-size: small;
 }
 
+.news {
+  display: flex;
+  align-items: center;
+}
+
+.news p {
+  padding: 0 0 10px 5px;
+}
+
+.news a {
+  display: block;
+  margin-top: 10px;
+}
+
+.news a:hover{
+  font-weight: bold;
+}
+
+.news img {
+  width: 40%;
+}
+
 textarea{
   resize: none;
 }
