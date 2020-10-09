@@ -2,7 +2,7 @@
   background-color: #00acee;
   color: #ffffff;
   margin: 0 auto 5px;
-  height: 120px;
+  min-height: 120px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -64,4 +64,52 @@
 .header-title img{
   height: 60px;
   object-fit: contain;
+}
+
+@media (max-width: 480px) {
+
+  .header {
+    position: static;
+    padding-bottom: 15px;
+  }
+
+  .header-box {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .header-title {
+    order: 1;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .header-how {
+    order: 2;
+    width: 55%;
+    margin-bottom:5px ;
+  }
+
+  .header-menu {
+    order: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .header-btn {
+    width: 100%;
+  }
+
+  .header-menu ul {
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-menu li {
+    margin: 0 5px;
+  }
+
 }

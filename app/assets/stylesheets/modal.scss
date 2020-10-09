@@ -101,3 +101,12 @@
   text-align: center;
   color: rgb(182, 48, 0);
 }
+
+@media(max-width:480px){
+
+  .modal_content{
+    width: 95%;
+    padding: 0 5%;
+    top: 50%;
+  }
+}

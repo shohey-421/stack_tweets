@@ -57,11 +57,11 @@ h4 {
   position: relative;
   margin: 2em auto;
   padding: 15px 35px 15px 25px;
-  width: 500px; /* ボックス幅 */
-  background-color: #fff; /* ボックス背景色 */
-  color: #555555; /* 文章色 */
-  border: 1px solid #ccc; /* 枠線 */
-  box-shadow: 1px 1px 1px #acacac; /* 影の色 */
+  width: 500px; 
+  background-color: #fff; 
+  color: #555555; 
+  border: 1px solid #ccc; 
+  box-shadow: 1px 1px 1px #acacac; 
  }
 
  .intro::before {
@@ -71,7 +71,7 @@ h4 {
   right: 10px;
   height: 55px;
   width: 15px;
-  border: 3px solid #555555; /*クリップ色 */
+  border: 3px solid #555555;
   background-color: none;
   border-radius: 12px;
   box-shadow: 1px 1px 2px #999;
@@ -284,3 +284,20 @@ tbody tr:hover th {
   text-align: center;
 }
 
+@media (max-width:480px){
+  .main {
+    padding-top: 0;
+  }
+
+  .intro {
+    width: 95%;
+  }
+
+  .stack-wrapper {
+    width: 100%;
+  }
+
+  .task {
+    width: 140px;
+  }
+}
