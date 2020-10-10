@@ -84,9 +84,13 @@
     padding: 10px 0;
   }
 
+  .header-title img {
+    width: 100%;
+  }
+
   .header-how {
     order: 2;
-    width: 55%;
+    width: fit-content;
     margin-bottom:5px ;
   }
 
@@ -97,10 +101,6 @@
     justify-content: center;
   }
 
-  .header-btn {
-    width: 100%;
-  }
-
   .header-menu ul {
     margin: 10px 0 0 0;
     display: flex;
@@ -108,8 +108,8 @@
     align-items: center;
   }
 
-  .header-menu li {
-    margin: 0 5px;
+  .header-menu ul li {
+    margin: 0 4px;
   }
 
 }
