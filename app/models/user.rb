@@ -27,7 +27,7 @@ class User < ApplicationRecord
    end
 
    if user.image != auth.info.image
-     user.update(image: auth.info.image)
+     user.update(image: auth.info.image.insert(4,"s"))
    end
 
    if user.name != auth.info.name
