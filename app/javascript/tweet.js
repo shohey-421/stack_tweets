@@ -1,8 +1,9 @@
 $(document).on('turbolinks:load', function(){
   $('#tweet-btn').on('click',function(){
-    let originalText = $('.tweet-sample').html().trim();
-    let tweetText = originalText.replace(/<br>/g,'%0a')
-    open( `https://twitter.com/intent/tweet?text=${tweetText}&hashtags=今日の積み上げ,今日の積み上げったー`, "_blank") ;
-    $('.tweet-sample').text("");
+    const originalText = $('.tweet-sample').html().trim();
+    const tweetText = originalText.replace(/#/g,'%23').replace(/<br>/g,'%0a') + '%0a'
+    const site_url = "https://stack-tweets.heys-apps.work/"
+    open( `https://twitter.com/intent/tweet?text=${tweetText}&url=${site_url}`, "_blank") ;
+    $('.tweet-sample').text("#今日の積み上げ");
   });
 });
